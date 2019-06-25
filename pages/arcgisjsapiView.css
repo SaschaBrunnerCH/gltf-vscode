@@ -1,0 +1,17 @@
+#arcgisjsapiDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#arcgisjsapiLogo {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 8px;
+  background-color: white;
+  color: black;
+  font-size: 22px;
+  opacity: 0.8;
+}

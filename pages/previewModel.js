@@ -1,4 +1,4 @@
-/*global Cesium,ko,CesiumView,ThreeView,BabylonView,acquireVsCodeApi*/
+/*global Cesium,ko,CesiumView,ArcgisjsapiView,ThreeView,BabylonView,acquireVsCodeApi*/
 (function() {
     'use strict';
 
@@ -17,7 +17,11 @@ var engineInfo = [{
     name: 'Three.js',
     html: 'threeHtml',
     view: ThreeView
-}];
+}, {
+    name: 'ArcGISJSAPI',
+    html: 'arcgisjsapiHtml',
+    view: ArcgisjsapiView
+ }];
 
 // Use Cesium's built-in copy of Knockout as the global UI manager
 window.ko = Cesium.knockout;

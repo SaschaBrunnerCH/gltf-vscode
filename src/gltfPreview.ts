@@ -23,6 +23,7 @@ export class GltfPreview extends ContextBase {
     private readonly _mainHtml: string;
     private readonly _babylonHtml: string;
     private readonly _cesiumHtml: string;
+    private readonly _arcgisjsapiHtml: string;
     private readonly _threeHtml: string;
 
     private _panels: { [fileName: string]: GltfPreviewPanelInfo } = {};
@@ -37,6 +38,7 @@ export class GltfPreview extends ContextBase {
         this._mainHtml = fs.readFileSync(this._context.asAbsolutePath('pages/previewModel.html'), 'UTF-8');
         this._babylonHtml = encodeURI(fs.readFileSync(this._context.asAbsolutePath('pages/babylonView.html'), 'UTF-8'));
         this._cesiumHtml = encodeURI(fs.readFileSync(this._context.asAbsolutePath('pages/cesiumView.html'), 'UTF-8'));
+        this._arcgisjsapiHtml = encodeURI(fs.readFileSync(this._context.asAbsolutePath('pages/arcgisjsapiView.html'), 'UTF-8'));
         this._threeHtml = encodeURI(fs.readFileSync(this._context.asAbsolutePath('pages/threeView.html'), 'UTF-8'));
     }
 
@@ -216,6 +218,7 @@ export class GltfPreview extends ContextBase {
             { id: 'dracoLoaderWasmPath', text: dracoLoaderWasmPath },
             { id: 'babylonHtml', text: this._babylonHtml },
             { id: 'cesiumHtml', text: this._cesiumHtml },
+            { id: 'arcgisjsapiHtml', text: this._arcgisjsapiHtml },
             { id: 'threeHtml', text: this._threeHtml },
             { id: 'gltf', text: gltfContent },
             { id: 'gltfRootPath', text: gltfRootPath },
@@ -225,6 +228,7 @@ export class GltfPreview extends ContextBase {
         const styles = [
             'pages/babylonView.css',
             'pages/cesiumView.css',
+            'pages/arcgisjsapiView.css',
             'pages/threeView.css',
             'pages/previewModel.css'
         ];
@@ -242,6 +246,7 @@ export class GltfPreview extends ContextBase {
             'pages/babylonView.js',
             'pages/babylonDebug.js',
             'pages/cesiumView.js',
+            'pages/arcgisjsapiView.js',
             'pages/threeView.js',
             'pages/previewModel.js'
         ];
